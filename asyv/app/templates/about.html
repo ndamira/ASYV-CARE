@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who We Are- ASYV CARE</title>
+    <link rel="stylesheet" href="{% static 'css\about.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+    li{
+    list-style: none;
+    }
+    a{
+    text-decoration: none;
+    color: orangered;
+    font-size: 1.2rem;
+    }
+    a:hover{
+    color: olivedrab;
+    }
+
+    /* HEADER*/
+
+    header{
+        position: relative;
+        padding: 0 3rem;
+    }
+    .navbar{
+        width: 100%;
+        height: 60px;
+        max-width: 1200px;
+        margin: 1rem auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar .logo a{
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    .navbar .links{
+        display: flex;
+        gap: 2rem;
+    }
+
+    .navbar .toggle_btn{
+        color: orangered;
+        font-size: 2rem;
+        cursor: pointer;
+        display: none;
+
+    }
+    .dropdown_menu{
+        display: none;
+        position: absolute;
+        top: 60px;
+        height: 0;
+        right: 2rem;
+        width: 300px;
+        background-color: #000;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: heigh 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .dropdown_menu.open{
+        height: 180px;
+    }
+    .dropdown_menu li{
+        padding: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*introduction*/
+    .intro{
+        display: flex;
+        font-family: 'Poppins', sans-serif;
+    }
+    .mission{
+        width: 54%;
+        font-size: 41px;
+        margin-top: 2%;
+        margin-left: 50px;
+        font-weight: bold;
+    }
+    .photo{
+        margin-top: 2%;
+        margin-left: 20px;
+        border-radius: 30px;
+    }
+    .container{
+        background: cyan;
+        display: block;
+        border-radius: 7px;
+        font-family: 'Poppins', sans-serif;
+    }
+    h1{
+        color: #000;
+        text-align: center;
+        font-size: 120px;
+        margin-top: 2%;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .container p{
+        font-family: 'Poppins', sans-serif;
+        color: #000;
+        font-size: 24px;
+        padding: 12px;
+    }
+
+    .intro-respo{
+        display: none;
+    }
+    .container-respo{
+        display: none;
+    }
+    
+        /* RESPONSIVE DESIGN */
+
+        @media(max-width: 992px){
+        .navbar .links{
+            display: none;
+        }
+
+        .navbar .toggle_btn{
+            display: block;
+        }
+        
+        .dropdown_menu{
+            display: block;
+        }
+        .intro{
+            display: none;
+        }
+        .container{
+            display: none;
+        }
+    }
+    @media(max-width: 576px){
+        .dropdown_menu{
+            left: 2rem;
+            width: unset;
+        }
+    }
+
+    @media(max-width: 1024px){
+        header{
+            position: relative;
+            padding: 0 3rem;
+        }
+        .navbar .links{
+            display: none;
+        }
+
+        .navbar .toggle_btn{
+            display: block;
+        }
+        
+        .dropdown_menu{
+            display: block;
+        }
+        .intro{
+            display: none;
+        }
+        .container{
+            display: none;
+        }
+        .intro-respo{
+            display: block;
+            padding: 25px;
+        }
+        .mission-respo{
+            padding-bottom: 10px;
+            font-size: 25px;
+        }
+        .photo-respo img{
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+        .container-respo{
+            display: block;
+            background-color: cyan;
+            border-radius: 7px;
+        }
+        .container-respo p{
+            font-family: 'Poppins', sans-serif;
+            color: #000;
+            font-size: 24px;
+            padding: 15px;
+        }
+    }
+</style>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="{% url 'home' %}">ASYV CARE</a>
+            </div>
+            <ul class="links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+            </ul>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="dropdown_menu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+        </div>
+    </header>
+    <div class="intro">
+        <div class="mission">
+            <p>
+                ASYV care is a multicommunication assistant and a social endeavour based in Agahozo Shalom Youth VIllage that acts as bridge 
+                for more departments to reciprocate information which also smoothan and sprighten their work.
+            </p>
+        </div>
+        <div class="photo">
+            <img src="{% static 'img\2.jpg' %}" alt="photo">
+        </div>
+    </div>
+    <div class="container">
+        <h1>About Us</h1>
+        <p>
+            Our website anchor several ASYV departments like the clinic, Kitchen and the school as well. As ASYV
+            family, any problem either big or small within that family alyways seems to start with poor communication where 
+            the ASYV care advocated for by initiating this website that the three departments will be using to enhance
+            and facilitate their network
+        </p>
+        <p>
+            Our clinic will be able to record students meant to take special diets, students who are at the clinic for
+            medical treatments and those who went outside the school for medical further treatments.  The Kitchen will be 
+            able to receive data of students with who meant to take special diets in smoothly and organized system.
+            The school at the peak will also be able to receive data of students who went out for further medical issues and 
+            those who are at the clinic plus recoding those from the school to the clinic.
+        </p>
+        <p>
+            All these ventures are consisted in our application as one way of gapping out poor communication in our beautiful 
+            and coherent family. Instigating our mission of warping mis-communication via departments shrinking
+            the occurence of our appealing family. 
+        </p>
+    </div>
+    <div class="intro-respo">
+        <div class="mission-respo">
+            <p>
+                ASYV care is a multicommunication assistant and a social endeavour based in Agahozo Shalom Youth VIllage that acts as bridge 
+                for more departments to reciprocate information which also smoothan and sprighten their work.
+            </p>
+        </div>
+        <div class="photo-respo">
+            <img src="{% static 'img\2.jpg' %}" alt="photo">
+        </div>
+    </div>
+    <div class="container-respo">
+        <h1>About Us</h1>
+        <p>
+        Our website anchor several ASYV departments like the clinic, Kitchen and the school as well. As ASYV
+        family any problem either big or small within that family alyways seems to start with poor communication. where 
+        the ASYV care advocated for by initiating this website that the three departments will be using to enhance
+        and facilitate their network
+        </p>
+        <p>
+        Our clinic will be able to record students meant to take special diets, students who are at the clinic for
+        medical treatments and those who went outside the school for medical further treatments.  The Kitchen will be 
+        able to receive data of students with who meant to take special diets in smoothly and organized system.
+        The school at the peak will also be able to receive data of students who went out for further medical issues and 
+        those who are at the clinic plus recoding those from the school to the clinic.
+        </p>
+        <p>
+        All these ventures are consisted in our application as one way of gapping out poor communication in our beautiful 
+        and coherent family. Instigating our mission of warping mis-communication via departments shrinking
+        the occurence of our appealing family. 
+        </p>
+        
+    </div>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function(){
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+</body>
+</html>

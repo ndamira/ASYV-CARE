@@ -1,0 +1,120 @@
+body{
+    background-color: beige;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/*Navbar*/
+.profile{
+    font-weight: bold;
+    font-size: 32px;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 30px;
+    padding-top: 50px;
+}
+nav{
+    flex: 1;
+    text-align: center;
+}
+nav ul{
+    display: inline-block;
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 100px;
+}
+nav ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    color:#000;
+    font-family: sans-serif;
+}
+nav ul li a:hover{
+    color: aqua;
+}
+/*Contact*/
+.container{
+    width: 100%;
+    height: 100%;
+}
+.main{
+    border-radius: 30px;
+    height: 100%;
+}
+.left{
+    text-align: left;
+    font-size: 20px;
+    padding-top: 100px;
+    margin-left: 50px;
+}
+span{
+    color: rgb(223, 87, 9);
+}
+label{
+    display: inline;
+    width: 100%;
+}
+#right_form{
+    width: 500px;
+    padding: 20px;
+    padding-bottom: 2px;
+    margin-left: 51%;
+    margin-top: -18%;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+input[type=submit] {
+    background-color: orange;
+    color: rgb(54, 28, 6);
+    padding: 25px 40px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+  }
+.names1{
+    width: 230px;
+  }
+.names2{
+    width: 230px;
+  }
+input[type=text], textarea {
+    width: 107%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+i:hover{
+    transform: scale(1.2);
+    transition: .5s;
+    color: rgb(252, 76, 7);
+
+}
+a:hover{
+    transform: scale(1.2);
+    transition: .5s;
+    color: rgb(252, 76, 7);
+
+}
+.submitbutton:hover{
+    color: aliceblue;
+    background-color: black;
+    transition: .10s;
+    transform: scale(1.2);
+}

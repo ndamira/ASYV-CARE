@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <title>Contact - ASYV CARE</title>
+    <link rel="stylesheet" href="{% static 'css\contactus.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    }
+    body{
+        margin-left: 150px;
+    }
+    li{
+    list-style: none;
+    }
+    a{
+    text-decoration: none;
+    color: orangered;
+    font-size: 1.2rem;
+    }
+    a:hover{
+    color: olivedrab;
+    }
+    a i{
+        color: #000;
+    }
+        /* HEADER*/
+
+    header{
+        position: relative;
+        padding: 0 2rem;
+    }
+    .navbar{
+        width: 100%;
+        height: 60px;
+        max-width: 1200px;
+        margin: 16px 0px 16px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar .logo a{
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    .navbar .links{
+        display: flex;
+        gap: 2rem;
+    }
+
+    .navbar .toggle_btn{
+        color: orangered;
+        font-size: 2rem;
+        cursor: pointer;
+        display: none;
+
+    }
+    .dropdown_menu{
+        display: none;
+        position: absolute;
+        top: 60px;
+        height: 0;
+        right: 2rem;
+        width: 300px;
+        background-color: #000;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: heigh 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .dropdown_menu.open{
+        height: 180px;
+    }
+    .dropdown_menu li{
+        padding: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container-respo{
+        display: none;
+    }
+    /* RESPONSIVE DESIGN */
+
+    @media(max-width: 992px){
+        .navbar .links{
+            display: none;
+        }
+
+        .navbar .toggle_btn{
+            display: block;
+        }
+        
+        .dropdown_menu{
+            display: block;
+        }
+    }
+    @media(max-width: 576px){
+        .dropdown_menu{
+            left: 2rem;
+            width: unset;
+        }
+    }
+
+    @media(max-width: 1024px){
+        body{
+            margin-left: 50px;
+        }
+        header{
+            position: relative;
+            padding: 0 3rem;
+        }
+        .navbar .links{
+            display: none;
+        }
+
+        .navbar .toggle_btn{
+            display: block;
+        }
+        
+        .dropdown_menu{
+            display: block;
+        }
+        .container{
+            display: none;
+        }
+        .container-respo{
+            display: block;
+            place-items: center;
+        }
+        .left-respo{
+            padding: 2rem;
+        }
+        .left-respo h1{
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .left-respo p{
+            font-size: 20px;
+            font-weight: 600;
+        }
+        #right_form_respo{
+            padding: 2rem;
+        }
+        input[type=text],textarea{
+            width: 100%;
+        }
+
+        
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="{% url 'home' %}">ASYV CARE</a>
+            </div>
+            <ul class="links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+            </ul>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="dropdown_menu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+        </div>
+    </header>
+    <div class="container">
+        <div class="main">
+            <div class="left">
+                <h1>Get in touch.</h1>
+                <p>Connect with our team and let us know how we can work</p>
+                <p>together!</p>
+            </br>
+                <a href="https:/www.instagram.com/muh1re/"><i class="fa-brands fa-instagram" style="font-size:25px"></i></a> &nbsp&nbsp <a href="https://www.linkedin.com/in/ndamira-regis-b0946b214/"><i class="fa-brands fa-linkedin-in" style="font-size:25px"></i></a> &nbsp&nbsp  <a href="https://www.youtube.com/@theasyv"> <i class="fa-brands fa-youtube" style="font-size:25px"></i></a>
+
+            </div>
+            <div id="right_form">
+                <form action="https://formspree.io/f/mdoreprg" method="POST">
+                    <label>Name</label> <span>*</span>
+                    </br>
+                    <input class="names1" type="text" name="First_Name" size="20" placeholder="Your First name and Last name"><!--&nbsp&nbsp<input class="names2" type="text" name="Last_Name" size="20" placeholder="Your Last name">--><br>
+                    <!--<label class="sub">First Name</label> <span>*</span>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <label class="sub">Last Name</label> <span>*</span>
+                    </br>-->
+                    </br>
+                    <label>Email</label> <span>*</span>
+                    </br>
+                    <input type="text" name="Email" size="20">
+                    </br>        
+                    </br>
+                    <label>Subject</label> <span>*</span>
+                    </br>
+                    <input type="text" name="Subject" size="20">
+                    </br>
+                    </br>
+                    <label>Message</label> <span>*</span>
+                    </br>
+                    <textarea rows="8" cols="70" name="comment" placeholder="Write something..."></textarea>
+                    </br>
+
+                    <input type="submit" name="submit" value="Submit" class="submitbutton">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-respo">
+        <div class="main-respo">
+            <div class="left-respo">
+                <h1>Get in touch.</h1>
+                <p>Connect with our team and let us know how we can work</p>
+                <p>together!</p>
+            </br>
+            <a href="https:/www.instagram.com/muh1re/"><i class="fa-brands fa-instagram" style="font-size:25px"></i></a> &nbsp&nbsp <a href="https://www.linkedin.com/in/ndamira-regis-b0946b214/"><i class="fa-brands fa-linkedin-in" style="font-size:25px"></i></a> &nbsp&nbsp  <a href="https://www.youtube.com/@theasyv"> <i class="fa-brands fa-youtube" style="font-size:25px"></i></a>
+
+            </div>
+            <div id="right_form_respo">
+                <form action="" method="get">
+                    <label>Name</label> <span>*</span>
+                    </br>
+                    <input class="names1" type="text" name="First_Name" size="20" placeholder="Your First name and Last name"><!--&nbsp&nbsp<input class="names2" type="text" name="Last_Name" size="20" placeholder="Your Last name">--><br>
+                    <!--<label class="sub">First Name</label> <span>*</span>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <label class="sub">Last Name</label> <span>*</span>
+                    </br>-->
+                    </br>
+                    <label>Email</label> <span>*</span>
+                    </br>
+                    <input type="text" name="Email" size="20">
+                    </br>        
+                    </br>
+                    <label>Subject</label> <span>*</span>
+                    </br>
+                    <input type="text" name="Subject" size="20">
+                    </br>
+                    </br>
+                    <label>Message</label> <span>*</span>
+                    </br>
+                    <textarea rows="8" cols="70" name="comment" placeholder="Write something..."></textarea>
+                    </br>
+
+                    <input type="submit" name="submit" value="Submit" class="submitbutton">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function(){
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+</body>
+</html>

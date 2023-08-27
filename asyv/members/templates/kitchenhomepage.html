@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE KITCHEN</title>
+    <link rel="stylesheet" href="{% static 'css\kitchenpagecss.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .container{
+            display: none;
+        }
+        .icon{
+        margin-top: -25px;
+        margin-left: 90%;
+        }
+        .user-info h3{
+            color: #fff;
+        }
+        .user-info .user{
+            color: #fff;
+        }
+        .the-form{
+            margin: auto;
+        }
+        .list{
+            margin: auto;
+        }
+
+        @media(max-width:768px){
+            .the-form{
+                display: none;
+            }
+            .container{
+                display: block;
+                background-color: rgb(80, 40, 40);
+                border-radius: 20px;
+                border-top: 70px solid rgb(62, 235, 105);
+                height: 100%;
+                padding-bottom: 10px;
+            }
+            .title{
+                margin-top: -60px;
+                padding-top: 5px;
+            }
+            .content{  
+                text-align: center;
+            }
+            .people{
+                border-radius: 10px;
+                margin-top: 20px;
+                margin-left: 50px;
+                margin-right: 50px;
+                padding-bottom: 50px;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box; 
+            }
+            .people1{
+                background-color: beige;
+                border-radius: 30px;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                margin-top: 20px;
+                transition: transform 0.5s;
+            }
+            ul li{
+                list-style: none;
+                }
+            .inside{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .people1:hover{
+                transform: scale(1.10);
+                z-index: 100;
+                background: rgb(209, 165, 165);
+                box-shadow: 0 5px 25px rgba(0, 0, 0, .2);
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+        @media(max-width:820px){
+            .the-form{
+                display: none;
+            }
+            .container{
+                display: block;
+                background-color: rgb(80, 40, 40);
+                border-radius: 20px;
+                border-top: 70px solid rgb(62, 235, 105);
+                height: 100%;
+                padding-bottom: 10px;
+            }
+            .title{
+                margin-top: -60px;
+                padding-top: 5px;
+            }
+            .content{  
+                text-align: center;
+            }
+            .people{
+                border-radius: 10px;
+                margin-top: 20px;
+                margin-left: 50px;
+                margin-right: 50px;
+                padding-bottom: 50px;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box; 
+            }
+            .people1{
+                background-color: beige;
+                border-radius: 30px;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                margin-top: 20px;
+                transition: transform 0.5s;
+            }
+            ul li{
+                list-style: none;
+                }
+            .inside{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .people1:hover{
+                transform: scale(1.10);
+                z-index: 100;
+                background: rgb(209, 165, 165);
+                box-shadow: 0 5px 25px rgba(0, 0, 0, .2);
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+        @media(max-width:1024px){
+            .the-form{
+                display: none;
+            }
+            .container{
+                display: block;
+                background-color: rgb(80, 40, 40);
+                border-radius: 20px;
+                border-top: 70px solid rgb(62, 235, 105);
+                height: 100%;
+                padding-bottom: 10px;
+            }
+            .title{
+                margin-top: -60px;
+                padding-top: 5px;
+            }
+            .content{  
+                text-align: center;
+            }
+            .people{
+                border-radius: 10px;
+                margin-top: 20px;
+                margin-left: 50px;
+                margin-right: 50px;
+                padding-bottom: 50px;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box; 
+            }
+            .people1{
+                background-color: beige;
+                border-radius: 30px;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                margin-top: 20px;
+                transition: transform 0.5s;
+            }
+            ul li{
+                list-style: none;
+                }
+            .inside{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .people1:hover{
+                transform: scale(1.10);
+                z-index: 100;
+                background: rgb(209, 165, 165);
+                box-shadow: 0 5px 25px rgba(0, 0, 0, .2);
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="main">
+            <nav>
+                <img class="image" src="{% static 'img\nonback-asyv.png' %}" alt="asyv-logo">
+                <h1><u>KITCHEN DEPARTMENT</u></h1>
+                <div class="icon">
+                    <ion-icon name="person-circle-sharp" class="ionic" onclick="toggleMenu()"></ion-icon>
+                </div>
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <ion-icon class="user" name="person-circle"></ion-icon>
+                            <h3>{{request.user}}</h3>
+
+                        </div>
+                        <hr class="line">
+
+                        
+                        <a href="{% url 'logout_user' %}" class="sub-menu-link">
+                            <ion-icon class="im" name="log-out"></ion-icon>
+                            <p>Log out</p>
+                            <span>></span>
+                            </a>
+                            
+                    </div>  
+                </div>
+            </nav>
+        
+        <div class="the-form">
+            <div class="information">
+                <div class="head2">
+                    <h2>WELCOME TO THE SPECIAL MEALS.</h2>
+                </div>
+                <hr>
+                <div class="list">
+                    {% for item in all %}
+                    <div class="list1">
+                        <ul>
+                            <li class="inner">
+                                <span class="check"><input type="checkbox" name="number">Name: {{item.names}}</span>
+                                <u>Meals</u><span class="meals"><ul><li>{{item.meals}}</li></ul></span>
+                                <span>Recieved date: {{ item.received_date }}</span>
+                                <span>Expired date: {{ item.expired_date }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="title">
+                    <h2>WELCOME TO THE SPECIAL MEALS.</h2>
+                </div>
+                
+                <div class="people">
+                    {% for item in all %}
+                    <div class="people1">
+                        <ul>
+                            <li class="inside">
+                                <span class="check"><input type="checkbox" name="number">Name: {{item.names}}</span>
+                                <u>Meals</u><span class="meals"><ul><li>{{item.meals}}</li></ul></span>
+                                <span>Recieved date: {{ item.received_date }}</span>
+                                <span>Expired date: {{ item.expired_date }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let subMenu= document.getElementById("subMenu");
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+    </div>
+</body>
+
+</html>

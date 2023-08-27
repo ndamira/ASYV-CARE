@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inform thr clinic</title>
+    <link rel="stylesheet" href="{% static 'css\schoolregard.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+<style>
+    input[type=submit] {
+            margin-left: 95%;
+            margin-top: 0px;
+            padding: 12px 20px;
+        }
+        .previous {
+            display: block;
+            position: absolute;
+            margin-left: 0%;
+            margin-top: -34px;
+        }
+        @media(max-width:1024px){
+            input[type=submit] {
+                margin-left: 92%;
+            }
+        }
+        @media(max-width:768px){
+            input[type=submit] {
+                margin-left: 90%;
+            }
+        }
+        @media(max-width:820px){
+            input[type=submit] {
+                margin-left: 90%;
+            }
+        }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            INFORM THE SCHOOL
+        </h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="fullname">Full names</label>
+            <input type="text" id="names" name="names" placeholder="Full names of student...">
+            <label for="grade">Grade</label>
+            <select name="grade" id="grade">
+                <option value="ishyaka" selected>Ishyaka</option>
+                <option value="inganji">Inganji</option>
+                <option value="intwari">Intwari</option>
+                <option value="ishami">Ishami</option>
+            </select>
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date">
+            <label for="reason">Reason</label>
+            <input type="text" id="reason" name="reason" placeholder="write the reason...">
+            <label for="issue">Special issues</label>
+            <textarea name="special_issues" id="issue" placeholder="Write something..." style="height: 200px;"></textarea>
+            <input type="submit" value="send">
+            <!--Previous-->
+            <a href="{% url 'dashbord' %}" class="previous">
+                &laquo;Previous
+            </a>
+        </form>
+    </div>
+</body>
+</html>

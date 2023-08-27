@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPECIAL MEALS</title>
+    <link rel="stylesheet" href="{% static 'css\specialmeal.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>REQUEST FOR SPECIAL MEALS</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="fname">Names of student</label>
+        <input type="text" id="fname" name="names" placeholder="Full names...">
+        <label for="meals">Meals</label>
+        <input type="text" id="meals" name="meals" placeholder="Write something">
+        <label for="date">Recieved date</label>
+        <input type="date" id="date" name="received_date">
+        <label for="date">Expired date</label>
+        <input type="date" id="date" name="expired_date">
+        <input type="submit" value="send">
+        <!--Previous
+        <a href="{% url 'dashbord' %}" class="previous">
+            &laquo;Previous
+        </a>
+    -->
+    </form>
+</body>
+</html>

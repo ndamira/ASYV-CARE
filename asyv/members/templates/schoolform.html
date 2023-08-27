@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | ASYV-CARE</title>
+    <link rel="stylesheet" href="{% static 'css\schoolform.css' %}">
+    <style>
+        section{
+            background-color: gray;
+        }
+        .logreg-link{
+            padding: 16px;
+            align-items: center;
+        }
+        .logreg-link p{
+            color: #fff;
+            margin-left: 24px;
+        }
+        .logreg-link a{
+            text-decoration: none;
+            color: chocolate;
+        }
+        .message{
+            color: chocolate;
+            margin-left: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+    <div class="login-box">
+        <form action="" method="post">
+            {% csrf_token %}
+            <h1>For school</h1>
+            <h2>Login</h2>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <input type="text" name="username" required>
+                <label>Username</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" name="password" required>
+                <label>password</label>
+            </div>
+            <!--
+            <div class="remember-forget">
+                <label ><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            -->
+            <button type="submit">Login</button>
+            <div class="logreg-link">
+                <p>Don't have an account? <a href="{% url 'school_register_user' %}">
+                    Register
+                </a></p>
+            </div>
+            <div class="message">
+                {% for message in messages %}
+                    {{message}}
+                {% endfor %}
+            </div>
+        </form>
+    </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
